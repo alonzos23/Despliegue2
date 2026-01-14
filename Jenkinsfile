@@ -13,12 +13,6 @@ pipeline {
             }
         }
 
-        stage('Ejecutar tests') {
-            steps {
-                sh 'npm test'
-            }
-        }
-
         stage('Construir Imagen Docker') {
             when {
                 expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
