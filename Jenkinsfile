@@ -6,12 +6,12 @@ pipeline {
         dockerTool "Dockertool" 
     }
 
-          stage('Ejecutar tests') {
-            steps {
-                sh 'chmod +x ./node_modules/.bin/jest'  // Soluciona el problema de permisos
-                sh 'npm test -- --ci --runInBand'
-            }
+    stage('Ejecutar tests') {
+        steps {
+            sh 'chmod +x ./node_modules/.bin/jest'  // Soluciona el problema de permisos
+            sh 'npm test -- --ci --runInBand'
         }
+    }
 
         stage('Ejecutar tests') {
             steps {
